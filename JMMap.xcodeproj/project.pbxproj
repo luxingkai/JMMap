@@ -16,6 +16,8 @@
 		11AC442F24209D6700421DC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC442E24209D6700421DC3 /* main.m */; };
 		11AC443924209D6700421DC3 /* JMMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC443824209D6700421DC3 /* JMMapTests.m */; };
 		11AC444424209D6700421DC3 /* JMMapUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC444324209D6700421DC3 /* JMMapUITests.m */; };
+		11AC44542420A43A00421DC3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11AC44532420A43A00421DC3 /* MapKit.framework */; };
+		11AC44582420AF0C00421DC3 /* JMLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC44572420AF0C00421DC3 /* JMLocationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,9 @@
 		11AC444324209D6700421DC3 /* JMMapUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMMapUITests.m; sourceTree = "<group>"; };
 		11AC444524209D6700421DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11AC445124209E1B00421DC3 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		11AC44532420A43A00421DC3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		11AC44562420AF0C00421DC3 /* JMLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMLocationManager.h; sourceTree = "<group>"; };
+		11AC44572420AF0C00421DC3 /* JMLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMLocationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11AC44542420A43A00421DC3 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +94,7 @@
 				11AC443724209D6700421DC3 /* JMMapTests */,
 				11AC444224209D6700421DC3 /* JMMapUITests */,
 				11AC441724209D6500421DC3 /* Products */,
+				11AC44522420A43A00421DC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +111,7 @@
 		11AC441824209D6500421DC3 /* JMMap */ = {
 			isa = PBXGroup;
 			children = (
+				11AC44552420AEF000421DC3 /* Map */,
 				11AC441924209D6500421DC3 /* AppDelegate.h */,
 				11AC441A24209D6500421DC3 /* AppDelegate.m */,
 				11AC441F24209D6500421DC3 /* ViewController.h */,
@@ -135,6 +143,23 @@
 				11AC444524209D6700421DC3 /* Info.plist */,
 			);
 			path = JMMapUITests;
+			sourceTree = "<group>";
+		};
+		11AC44522420A43A00421DC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11AC44532420A43A00421DC3 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		11AC44552420AEF000421DC3 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				11AC44562420AF0C00421DC3 /* JMLocationManager.h */,
+				11AC44572420AF0C00421DC3 /* JMLocationManager.m */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11AC442F24209D6700421DC3 /* main.m in Sources */,
+				11AC44582420AF0C00421DC3 /* JMLocationManager.m in Sources */,
 				11AC442124209D6500421DC3 /* ViewController.m in Sources */,
 				11AC441B24209D6500421DC3 /* AppDelegate.m in Sources */,
 				11AC442724209D6500421DC3 /* JMMap.xcdatamodeld in Sources */,

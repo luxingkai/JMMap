@@ -28,6 +28,12 @@
     return YES;
 }
 
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    
+    
+}
+
+
 #pragma mark - Core Data stack
 
 @synthesize persistentContainer = _persistentContainer;
