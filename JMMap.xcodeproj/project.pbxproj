@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		11AC441B24209D6500421DC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC441A24209D6500421DC3 /* AppDelegate.m */; };
-		11AC441E24209D6500421DC3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC441D24209D6500421DC3 /* SceneDelegate.m */; };
 		11AC442124209D6500421DC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC442024209D6500421DC3 /* ViewController.m */; };
 		11AC442424209D6500421DC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11AC442224209D6500421DC3 /* Main.storyboard */; };
 		11AC442724209D6500421DC3 /* JMMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11AC442524209D6500421DC3 /* JMMap.xcdatamodeld */; };
@@ -40,8 +39,6 @@
 		11AC441624209D6500421DC3 /* JMMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11AC441924209D6500421DC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11AC441A24209D6500421DC3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		11AC441C24209D6500421DC3 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		11AC441D24209D6500421DC3 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		11AC441F24209D6500421DC3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		11AC442024209D6500421DC3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		11AC442324209D6500421DC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +53,7 @@
 		11AC443F24209D6700421DC3 /* JMMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JMMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11AC444324209D6700421DC3 /* JMMapUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMMapUITests.m; sourceTree = "<group>"; };
 		11AC444524209D6700421DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11AC445124209E1B00421DC3 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +106,6 @@
 			children = (
 				11AC441924209D6500421DC3 /* AppDelegate.h */,
 				11AC441A24209D6500421DC3 /* AppDelegate.m */,
-				11AC441C24209D6500421DC3 /* SceneDelegate.h */,
-				11AC441D24209D6500421DC3 /* SceneDelegate.m */,
 				11AC441F24209D6500421DC3 /* ViewController.h */,
 				11AC442024209D6500421DC3 /* ViewController.m */,
 				11AC442224209D6500421DC3 /* Main.storyboard */,
@@ -118,6 +114,7 @@
 				11AC442D24209D6700421DC3 /* Info.plist */,
 				11AC442E24209D6700421DC3 /* main.m */,
 				11AC442524209D6500421DC3 /* JMMap.xcdatamodeld */,
+				11AC445124209E1B00421DC3 /* PrefixHeader.pch */,
 			);
 			path = JMMap;
 			sourceTree = "<group>";
@@ -273,7 +270,6 @@
 				11AC442F24209D6700421DC3 /* main.m in Sources */,
 				11AC442124209D6500421DC3 /* ViewController.m in Sources */,
 				11AC441B24209D6500421DC3 /* AppDelegate.m in Sources */,
-				11AC441E24209D6500421DC3 /* SceneDelegate.m in Sources */,
 				11AC442724209D6500421DC3 /* JMMap.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +441,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 962BW6QCNQ;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/JMMap/PrefixHeader.pch";
 				INFOPLIST_FILE = JMMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -462,6 +459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 962BW6QCNQ;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/JMMap/PrefixHeader.pch";
 				INFOPLIST_FILE = JMMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

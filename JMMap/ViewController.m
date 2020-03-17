@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <LocalAuthentication/LocalAuthentication.h>
+#import <MapKit/MapKit.h>
 
 @interface ViewController ()
 
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+
+    
 }
 
 
