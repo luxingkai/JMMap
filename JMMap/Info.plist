@@ -35,10 +35,18 @@
 	<array>
 		<string>MKDirectionsModeBike</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>请求定位</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>请求定位</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>请求定位</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -58,9 +66,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>请求定位</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>请求定位</string>
 </dict>
 </plist>

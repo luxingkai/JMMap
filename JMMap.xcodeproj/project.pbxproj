@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113FBCA024FDE677007C9FC2 /* CoreLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 113FBC9F24FDE677007C9FC2 /* CoreLocationController.m */; };
 		11AC441B24209D6500421DC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC441A24209D6500421DC3 /* AppDelegate.m */; };
 		11AC442124209D6500421DC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC442024209D6500421DC3 /* ViewController.m */; };
-		11AC442424209D6500421DC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11AC442224209D6500421DC3 /* Main.storyboard */; };
 		11AC442724209D6500421DC3 /* JMMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11AC442524209D6500421DC3 /* JMMap.xcdatamodeld */; };
 		11AC442924209D6700421DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11AC442824209D6700421DC3 /* Assets.xcassets */; };
 		11AC442C24209D6700421DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11AC442A24209D6700421DC3 /* LaunchScreen.storyboard */; };
@@ -38,12 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		113FBC9E24FDE677007C9FC2 /* CoreLocationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreLocationController.h; sourceTree = "<group>"; };
+		113FBC9F24FDE677007C9FC2 /* CoreLocationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreLocationController.m; sourceTree = "<group>"; };
 		11AC441624209D6500421DC3 /* JMMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11AC441924209D6500421DC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11AC441A24209D6500421DC3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		11AC441F24209D6500421DC3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		11AC442024209D6500421DC3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		11AC442324209D6500421DC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11AC442624209D6500421DC3 /* JMMap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JMMap.xcdatamodel; sourceTree = "<group>"; };
 		11AC442824209D6700421DC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11AC442B24209D6700421DC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		113FBCA224FDF4B7007C9FC2 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				113FBC9E24FDE677007C9FC2 /* CoreLocationController.h */,
+				113FBC9F24FDE677007C9FC2 /* CoreLocationController.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		11AC440D24209D6500421DC3 = {
 			isa = PBXGroup;
 			children = (
@@ -111,12 +121,12 @@
 		11AC441824209D6500421DC3 /* JMMap */ = {
 			isa = PBXGroup;
 			children = (
+				113FBCA224FDF4B7007C9FC2 /* Location */,
 				11AC44552420AEF000421DC3 /* Map */,
 				11AC441924209D6500421DC3 /* AppDelegate.h */,
 				11AC441A24209D6500421DC3 /* AppDelegate.m */,
 				11AC441F24209D6500421DC3 /* ViewController.h */,
 				11AC442024209D6500421DC3 /* ViewController.m */,
-				11AC442224209D6500421DC3 /* Main.storyboard */,
 				11AC442824209D6700421DC3 /* Assets.xcassets */,
 				11AC442A24209D6700421DC3 /* LaunchScreen.storyboard */,
 				11AC442D24209D6700421DC3 /* Info.plist */,
@@ -267,7 +277,6 @@
 			files = (
 				11AC442C24209D6700421DC3 /* LaunchScreen.storyboard in Resources */,
 				11AC442924209D6700421DC3 /* Assets.xcassets in Resources */,
-				11AC442424209D6500421DC3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +304,7 @@
 				11AC442F24209D6700421DC3 /* main.m in Sources */,
 				11AC44582420AF0C00421DC3 /* JMLocationManager.m in Sources */,
 				11AC442124209D6500421DC3 /* ViewController.m in Sources */,
+				113FBCA024FDE677007C9FC2 /* CoreLocationController.m in Sources */,
 				11AC441B24209D6500421DC3 /* AppDelegate.m in Sources */,
 				11AC442724209D6500421DC3 /* JMMap.xcdatamodeld in Sources */,
 			);
@@ -332,14 +342,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		11AC442224209D6500421DC3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				11AC442324209D6500421DC3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		11AC442A24209D6700421DC3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

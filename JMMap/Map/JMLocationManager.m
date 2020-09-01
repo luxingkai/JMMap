@@ -33,13 +33,14 @@
     if (self = [super init]) {
         
         _locationManager = [[CLLocationManager alloc] init];
-        //请求定位授权
-        [_locationManager requestWhenInUseAuthorization];
         _locationManager.delegate = self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
         
         // Set a movement threshold for new events.
         _locationManager.distanceFilter = 500;
+        
+        //请求定位授权
+        [_locationManager requestWhenInUseAuthorization];
     }
     return self;
 }
