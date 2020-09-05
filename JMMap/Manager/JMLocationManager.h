@@ -27,10 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 当前设备是否支持定位服务
 - (BOOL)currentDeviceSupportLocation;
-/// 开始定位
-- (void)startLocation;
-/// 结束定位
-- (void)stopLocation;
+
 
 
 

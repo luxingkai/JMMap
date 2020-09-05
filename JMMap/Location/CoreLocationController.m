@@ -33,6 +33,7 @@
     [self.view addSubview:_addressLab];
     
     
+    
 #pragma mark -- Essentials
     
     /* Adding Location Services to Your App
@@ -224,11 +225,182 @@
     
 #pragma mark -- Location Updates
     
+    /*
+     Core Location offers three different services for fetching the uesr's location.
+     Each service offers different benefits and comes with different power and authorization
+     requirements. You can use a single service or you can use multiple services at different
+     times, depending on your needs.
+     
+     Service            Discription
+                        The most power-efficient way to gather location data. This service delivers
+                        location updates when the user has spent time in one location and then
+     Visit              moves on. Each update includes both the location and the amount of time spent
+     location           at that location.
+     service
+                        This service is not intended for navigation or other real-time activities.
+                        Instead, use it to identify patterns in the user's behavior and apply that
+                        knowledge to other parts of your app. For example, a music app might prepare
+                        a workout playlist when the user leaves the house and heads to gym.
+                    
+                        
+                        A power-friendly alternative for apps that need to track the user's location
+                        but do not need frequent updates or the precision offered  by GPS. This service
+     Significant        relies on lower-power alternatives to determine the user's location and delivers
+     change             updates only When significant changes to that location occur.
+     location
+     service            You might use this service to deliver suggestions for nearby points of
+                        interest when the user is walking.
+        
+     
+                        A configurable, general-purpose solution for getting the user's location
+     Standard           in real time. This service uses significantly more power than the other
+     location           location services, but it delivers the most accurate and immediate
+     service            location information.
+                        
+                        Use this service only when you really need it, such as when offering
+                        navigation instructions or when recording a user's path on the hike.
+     
+     Always choose the most power-effcient service that serves the needs of your app.
+     To help save power, disable location services (or switch to a lower-power alternative)
+     when you do not need the location data offered by the service. For example, you might
+     disable location services when your app is in the background and would not use that
+     data otherwise.
+     */
+    
+//    CLLocation
+//    CLLocationCoordinate2D
+//    CLFloor
+//    CLVisit
+    
+    
 #pragma mark -- Region Monitoring
+    
+    /*
+     Use region monitoring to determine when the user enters or leaves a geographic
+     region.
+     
+     Region monitoring(also known as geofencing) is a way for your app to be alerted
+     when the uesr enters or exits a geographical region. You might use region monitoring
+     to preform location-related tasks. For example, the Reminders app uses them to
+     trigger reminders when the user arrives at or leaves a specified location.
+     
+     In iOS, regions are monitored by the system, which wakes up your app as needed
+     when the user corsses a defined region boundary. In macOS, region monitoring
+     works only while the app is running(either in the foreground or background) and
+     the user's system is awake. The system does not launch Mac apps to deliver
+     region-related notifications.
+     */
+    
+    /*
+     Define and Monitor a Geographic Region
+     A region is a circular area centered on a geographic coordinate, and you define one using
+     a CLCircularRegion object. The radius of the region object defines its boundary.
+     You define the regions you want to monitor and register them with the system by
+     calling the startMonitoring(for:) method of your CLLocationManager object.
+     The system monitors your regions until you explicitly ask it to stop or until the
+     device reboots.
+
+     Listing 1 shows how to configure and register a region centered around a point
+     provided by the caller of the method. The method uses the largest allowed radius
+     to define the boundaries of the region and asks that the system deliver
+     notifications only when the user enters the region.
+     
+     Tip
+     Regions are shared resources that rely on specific hardware capabilities.
+     To ensure that all apps can participate in region monitoring, Core Location
+     prevents any single app from monitoring more than 20 regions simultaneously.
+     To work around this limitation, monitor only regions that are close to the
+     user’s current location. As the user moves, update the list based on the user’s new location.
+     */
+    
+    /*
+     Handle a Region-Related Notification
+     Whenever the user crosses the boundary of one of your app's registered regions,
+     the system notifies your app. If an iOS app is not running when the boundary
+     crossing occurs, the system tries to launch it. An iOS app that supports region
+     monitoring must enable the Location updates background mode so that it can be
+     launched in the background.
+
+     Boundary crossing notifications are delivered to your location manager's
+     delegate object. Specifically, the location manager calls the locationManager(_:didEnterRegion:)
+     or locationManager(_:didExitRegion:) methods of its delegate. If your app was launched,
+     you must configure a CLLocationManager object and delegate object right away so
+     that you can receive these notifications. To determine whether your app was
+     launched for a location event, look for the UIApplication.LaunchOptionsKey in
+     the launch options dictionary.
+
+     When determining whether a boundary crossing happened, the system waits to be
+     sure before sending the notification. Specifically, the user must travel a
+     minimum distance over the boundary and remain on the same side of the boundary
+     for at least 20 seconds. These conditions help eliminate spurious calls to
+     your delegate object’s methods.
+
+     Listing 2 shows a delegate method that is called when the user enters a
+     registered region. Regions have an associated identifier, which this method
+     uses to look up information related to the region and perform the associated action.
+     */
+    
+    
     
 #pragma mark -- iBeacon
     
+    /*
+     
+     */
+    
+    
+    
 #pragma mark -- Compass Headings
+    
+    /*
+     Getting Heading and Course Information
+     
+     Heading and course information are commonly used by navigation apps to help
+     guide the user to a destination. The heading of a user’s device is its current
+     orientation relative to magnetic or true north. Devices with GPS can report
+     course information, which represents the direction in which the device is moving.
+     The Compass app in iOS uses heading information to implement a magnetic compass
+     interface, as shown in Figure 1. Augmented reality apps might use this information
+     to determine which direction the user is facing.
+     
+     Get the Current Heading
+     
+     You use heading information to determine the current orientation of the
+     user’s device. For example, an augmented reality app might use the current
+     heading to help determine what information to show on the user’s screen.
+     Headings are usually reported relative to the top of the device, but you can
+     configure how values are reported using the headingOrientation property of
+     your CLLocationManager object.
+
+     After determining whether heading information is available, call the
+     startUpdatingHeading() method of your CLLocationManager object to begin
+     the delivery of heading updates. The location manager delivers updates
+     to the locationManager(_:didUpdateHeading:) method of its delegate whenever
+     the heading information changes.
+     
+     Note
+
+     Heading information is available only on devices with a built-in
+     magnetometer;it’s not available in iOS Simulator. The magnetometer determines
+     a device’s orientation relative to magnetic north. When location data is
+     available, Core Location also reports the device’s orientation relative to true north.
+     
+     
+     Get Course Information
+     Course information reflects the speed and direction in which a device is
+     moving and is available only on devices with GPS hardware. Don’t confuse
+     course information with heading information. Course direction reflects
+     the direction in which the device is moving and is independent of the
+     device’s physical orientation. The most common use of course information
+     is in navigation apps.
+
+     
+     Course information is included automatically in CLLocation objects delivered
+     to your app as part of its location updates. When enough location data has
+     been gathered to compute a course, the location manager fills in the speed
+     and course properties of the location object with the appropriate values.
+     */
+    
     
 #pragma mark -- Geocoding (地理编码和反编码)
     
@@ -307,8 +479,27 @@
      error to your completion block.
      */
     
+    /*
+     CLPlacemark
+     
+     A user-friendly description of a geographic coordinate, often containing the name of
+     the place, its address, and other relevant information.
+     
+     A CLPlacemark object stores placemark data for a given latitude and longitude. Placemark
+     data includes information such as the country, state, city, and street address associated
+     with the specified coordinate. It can also include points of interest and geographically
+     related data.
+     
+     When you reverse geocode a geographic coordinate using a CLGeocoder object, you receive
+     a CLPlacemark object containing the descriptive information for that location. You can also
+     create CLPlacemark object and fill it with address information yourself, which you might do
+     when you want to determine the geographic coordinate associated with the location.
+     */
+    
+    
     
 #pragma mark -- Errors
+
     
     
 }

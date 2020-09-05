@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "CoreLocationController.h"
+#import "MapViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +23,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    CoreLocationController *vc = [[CoreLocationController alloc] init];
+    MapViewController *vc = [[MapViewController alloc] init];
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
     

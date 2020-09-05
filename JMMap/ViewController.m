@@ -21,9 +21,7 @@
     JMLocationManager *_locationManager;
 }
 
-- (void)dealloc {
-    [_locationManager stopLocation];
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,7 +31,6 @@
         
     _locationManager = [JMLocationManager manager];
     _locationManager.delegate = self;
-    [_locationManager startLocation];
     
     //Setting the Visible Portion of the Map
     CLLocationCoordinate2D coordinate2D = CLLocationCoordinate2DMake(40, -160.0);
@@ -84,6 +81,7 @@
     
 }
 
+
 #pragma mark -- Using the Delegate to Respond to User Interactions
 
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated {
@@ -93,7 +91,9 @@
     
 }
 - (void)mapViewDidChangeVisibleRegion:(MKMapView *)mapView {
-    NSLog(@"%f %f %f",mapView.userLocation.location.coordinate.latitude,mapView.userLocation.location.coordinate.latitude,mapView.userLocation.location.altitude);
+    NSLog(@"%f %f %f",mapView.userLocation.location.coordinate.latitude,
+          mapView.userLocation.location.coordinate.latitude,
+          mapView.userLocation.location.altitude);
 }
 - (void)mapViewWillStartLoadingMap:(MKMapView *)mapView {
     
