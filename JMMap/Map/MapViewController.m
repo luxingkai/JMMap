@@ -11,8 +11,10 @@
 #import <CoreLocation/CoreLocation.h>
 #import "JMLocationManager.h"
 #import "AnnotationView.h"
+#import "SearchViewController.h"
 
-@interface MapViewController ()<MKMapViewDelegate,JMLocationManagerDelegate,MKAnnotation>
+@interface MapViewController ()<MKMapViewDelegate,JMLocationManagerDelegate,MKAnnotation,SearchViewControllerDelegate
+>
 
 @end
 
@@ -30,16 +32,21 @@
     [_mapView removeAnnotation:self];
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+                                                                               target:self
+                                                                               action:@selector(search)];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
     
     
     _locationManager = [JMLocationManager manager];
     _locationManager.delegate = self;
-    
     
     /*
      MapKit
@@ -181,8 +188,8 @@
      overlay moves onscreen, the map view asks its delegate to create a
      corresponding overlay renderer.
      */
-    
-    _mapView = [[MKMapView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    CGFloat status_h = [UIApplication sharedApplication].statusBarFrame.size.height;
+    _mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 44.0 + status_h, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - status_h - 44.0)];
     
     /* Customizing the Map View Behavior */
     _mapView.delegate = self;
@@ -506,20 +513,254 @@
     
 #pragma mark -- Geographical Features
     
+    /*
+     Displaying an indoor Map
+     Use the indoor Mapping data format(IMDF)to show an indoor map with custom
+     overlays and points of interest.
+     
+     The sample app demonstrates decoding, rendering, and styling of a small subset
+     of the IMDF feature types and their properties. Use these examples to create
+     your own indoor map with a style that's consistent with your app's design.
+     You'll need to handle feature categories that are specific to your venue,
+     and configure the map style using your own colors, icons, and level picker.
+     */
     
+    /*
+     MKGeoJSONDecoder
+     An object that decodes GeoJSON objects into MapKit types.
+     The GeoJSON decoder returns objects that conform to the
+     MKGeoJSONObejct protocol.
+     */
+    
+    /*
+     MKGeoJSONFeature
+     The decoded representation of a GeoJSON feature.
+     A feature is an object with associated geometry and optional properties
+     in JSON that you define. MAPKit exposes these optional properties,
+     but treats them as opaque. MKGeoJSONFeature is one of the classes
+     that can be returned by the GeoJSON decoder(MKGeoJSONDecoder).
+     https://tools.ietf.org/html/rfc7946#section-3.2
+     */
+    
+    /*
+     MKGeoJSONObject
+     Objects that can be returned by the GeoJSON decoder.
+     
+     classes that conform to this protocol represent the types that
+     the GeoJSON decoder can return. There is no reason to create
+     your own classes that conform to this protocol; only MapKit
+     can define classes used by the GeoJSON decoder.
+     */
     
     
 #pragma mark -- Directions
     
+    /*
+     MKDirections
+     A utility object that computes directions and travel-time information
+     based on that route information you provide.
+     
+     You use an MKDirections object to ask the Apple servers to provide
+     walking or driving directions for a route, which you specify using
+     an MKDirections.Request object. After making a request, MapKit delivers
+     the results asychronously to the completion handler that you provide.
+     You can also get the estimated travel time for the route.
+     
+     Each MKDirections object handles a single request for directions,
+     although you can cancel and restart that request as needed. You
+     can create multiple instances of this class and process different
+     route requests at the same time, but you should make requesets only
+     when you plan to present the corresponding route information to the
+     user. Apps may receive a MKError.code.loadingThrottled error if too
+     many requests have been made from the current device in too short a
+     time period.
+     */
+    
+    /*
+     MKDirections.Request
+     The start and end points of a route, along with the planned mode of transportation.
+     
+     You use an MKDirections.Request object when requesting or providing directions.
+     If your app provides directions, use this class to decode the URL sent to you
+     by Maps. If you need to request directions from Apple, pass an instance of
+     this class to an MKDirections object. For example, an app that provides subway
+     directions might request walking directions to and from relevant subway stations.
+
+     For apps that provide directions, you receive direction-related URLs in your
+     app delegate’s application(_:open:sourceApplication:annotation:) method.
+     Upon receiving a URL, call the isDirectionsRequest(_:) method of this class
+     to determine if the URL is related to routing directions. If it is, create
+     an instance of this class using the provided URL and extract the map items
+     associated with the start and end points.
+
+     Note
+     To provide routing directions, your app must include special keys in
+     its Info.plist file and be able to handle URLs sent to it by the Maps
+     app. These keys indicate a special URL type that your app must be prepared
+     to handle. For information about how to implement this support, see Location
+     and Maps Programming Guide.
+     */
+    
+    /*
+     MKDirections.Response
+     The route information returned by Apple servers in response to one of
+     your requests for directions.
+     
+     You do not create instances of this class directly. Instead, you initiate
+     a request for directions by calling the calculate(completionHandler:)
+     method of an MKDirections object. The completion handler you pass to that
+     method receives an MKDirections.Response object with the results.
+     */
+    
+    /*
+     MKDirections.ETAResponse
+     The travel-time information returned by Apple servers.
+
+     You do not create instances of this class directly. Instead, you initiate
+     a request for the travel time by calling the calculateETA(completionHandler:)
+     method of an MKDirections object. The completion handler you pass to that
+     method receives an MKDirections.ETAResponse object with the results.
+     */
+    
+    /*
+     MKRoute
+     A single route between a requested start and end point.
+     An MKRoute object defines the geometry for the route—that is, it contains
+     line segments associated with specific map coordinates. A route object
+     may also include other information, such as the name of the route, its
+     distance, and the expected travel time.
+
+     You do not create instances of this class directly. When you use an
+     MKDirections object to request directions from Apple, the returned
+     MKDirections.Response object contains the possible routes.
+     */
+    
+    /*
+     MKRoute.Step
+     One portion of an overall route.
+     Each MKRoute.Step object corresponds to a single instruction that would
+     need to be followed by the user when navigating between two points. For
+     example, a step might involve following a single road until a turn is required.
+
+     You do not create instances of this class directly. An MKRoute object
+     contains the MKRoute.Step objects associated with a route. For more
+     information about requesting directions, see MKDirections.
+     */
+    
     
 #pragma mark -- Local Search
+    
+    /*
+     Searching for Nearby Points of Interest
+     Provide automatic search completions based on a user’s partial search query,
+     and search the map for relevant locations nearby.
+     
+     The MapSearch code sample demonstrates how to programmatically search for
+     map-based addresses and points of interest using a natural language string.
+     The places found are centered around the user’s current location.
+     */
+    
+    /*
+     MKLocalSearch
+     A utility object for initiating map-based searches and processing the results.
 
+     Use an MKLocalSearch object to execute a single search request. You might use
+     this class to search for addresses or points of interest on the map. Upon
+     completion of the request, the object delivers the results to the completion
+     handler that you provide.
+     */
+    
+    /*
+     MKLocalSearchCompleter
+     A utility object for generating a list of completion strings based on a
+     partial search string that you provide.
+     
+     You use an MKLocalSearchCompleter object to retrieve auto-complete suggestions for
+     your own map-based search controls. As the user types text, you feed the current
+     text string into the search completer object, which delivers possible string
+     completions that match locations or points of interest.
+
+     You create and configure MKLocalSearchCompleter objects yourself. You must
+     always assign a delegate object to the search completer so that you can
+     receive the search results that it generates. You should also specify a search
+     region to restrict results to a designated area.Listing 1 shows a simple example
+     of a view controller that stores the MKLocalSearchCompleter object in a property.
+     The view controller itself acts as the delegate for the completer and the view
+     controller uses the region associated with an MKMapView object that is part of
+     the view controller’s interface. Completer objects are long-lived objects, so you
+     can store strong references to them and reuse them later in your code.
+     
+     Update the value of the completer’s queryFragment property to begin a search query.
+     You can update this property in real time as the user types new characters into a
+     text field because the completer object waits a short amount of time for the query
+     string to stabilize. When modifications to the query strong stop, the completer
+     initiates a new search and returns the results to your delegate as an array of
+     MKLocalSearchCompletion objects.
+     */
+    
+    /*
+     MKLocalSearchCompletion
+     
+     A fully-formed string that completes a partial string.
+     You do not create instances of this class directly. Instead, you use an
+     MKLocalSearchCompleter to initiate a search based on a set of partial search
+     strings. That object stores any matches in its results property. Retrieve any
+     MKLocalSearchCompletion objects from that property and display the search terms
+     in your interface or use one to initiate a search for content based on that search term.
+
+     When displaying text completions for a partial search term in your user
+     interface, you might want to use a bold version of a font or add some
+     other highlighting to the portion of the completion string that caused
+     it to match the partial search term. To help you add this styling, the
+     completion object includes highlight ranges for the title and subtitle strings.
+     */
+    
+    MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
+    MKLocalSearch *localSearch = [[MKLocalSearch alloc] initWithRequest:searchRequest];
+    
+    
     
 #pragma mark -- Points of Interest
     
+    /*
+     Optimizing Map Views with Filtering and Camera Constraints
+     Display a map that is relevant to the user by filtering points of interest and
+     search results, and constraining the visible region
+     
+     This sample code demonstrates three features that can make a map relevant to your users:
+     • Constraining the map view’s visible region and zoom to keep the desired areas in view.
+     • Filtering the points of interest to reduce the clutter on the map view.
+     • Filtering search result types and points of interest to improve to search and autocompletion.
+     */
+    
+    /*
+     MKPointOfInterestFilter
+     A filter that includes or excludes point of interest categories from a map view,
+     local search, or local search completer.
+
+     You can apply a point of interest filter in a map view (pointOfInterestFilter),
+     a local search request (pointOfInterestFilter), a search completer (pointOfInterestFilter),
+     and in snapshot options (pointOfInterestFilter).
+     */
     
 #pragma mark -- Static Map Snapshots
+    
+    /*
+     MKMapSnapshotter
+     A utility class for capturing a map and it’s content into an image.
+     Use an MKMapSnapshotter object when you want to capture the system-provided map content,
+     including the map tiles and imagery. The snapshotter object always captures the best
+     image possible, loading all of the available map tiles before capturing the image.
 
+     You configure a snapshotter object using an MKMapSnapshotter.Options object. The
+     snapshot options specify the appearance of the map, including which portion of
+     the map you want to capture.
+
+     Snapshotter objects do not capture the visual representations of any overlays or
+     annotations that your app creates. If you want those items to appear in the final
+     snapshot, you must draw them on the resulting snapshot image. For more information
+     about drawing custom content on map snapshots, see MKMapSnapshotter.Snapshot.
+     */
     
 #pragma mark -- Errors
     
@@ -543,8 +784,22 @@
 }
 
 
+#pragma mark --
+- (void)search {
+    
+    SearchViewController *searchVC = [[SearchViewController alloc] init];
+    searchVC.delegate = self;
+    [self.navigationController presentViewController:searchVC animated:true completion:nil];
+}
 
-
+- (void)searchViewSelectSearchResult:(NSString *)selectAddress {
+    
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:selectAddress completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        CLPlacemark *placemark = placemarks.firstObject;
+        _mapView.centerCoordinate = placemark.location.coordinate;
+    }];
+}
 
 
 

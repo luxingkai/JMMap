@@ -20,6 +20,8 @@
 		11AC444424209D6700421DC3 /* JMMapUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC444324209D6700421DC3 /* JMMapUITests.m */; };
 		11AC44542420A43A00421DC3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11AC44532420A43A00421DC3 /* MapKit.framework */; };
 		11AC44582420AF0C00421DC3 /* JMLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC44572420AF0C00421DC3 /* JMLocationManager.m */; };
+		11D1F800250603F40071E89C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D1F7FF250603F40071E89C /* SearchViewController.m */; };
+		11D1F80325061B8A0071E89C /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D1F80225061B8A0071E89C /* SearchResultCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		113F298525075E2B0083ED13 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		113F298625075E2F0083ED13 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		113F298725075E330083ED13 /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-IN"; path = "en-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		113F298825075E380083ED13 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		113F298925075E3C0083ED13 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		113F298A25075E3F0083ED13 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		113F298B25075E440083ED13 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		113F298C25075E480083ED13 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		113F298D25075E4D0083ED13 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		113F298E25075E520083ED13 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		113F298F25075E570083ED13 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		113F299025075E5D0083ED13 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		113FBC9E24FDE677007C9FC2 /* CoreLocationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreLocationController.h; sourceTree = "<group>"; };
 		113FBC9F24FDE677007C9FC2 /* CoreLocationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreLocationController.m; sourceTree = "<group>"; };
 		1141938C2500F65E00F8CBBA /* AnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnnotationView.h; sourceTree = "<group>"; };
@@ -66,6 +80,10 @@
 		11AC44532420A43A00421DC3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		11AC44562420AF0C00421DC3 /* JMLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMLocationManager.h; sourceTree = "<group>"; };
 		11AC44572420AF0C00421DC3 /* JMLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMLocationManager.m; sourceTree = "<group>"; };
+		11D1F7FE250603F40071E89C /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		11D1F7FF250603F40071E89C /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		11D1F80125061B8A0071E89C /* SearchResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
+		11D1F80225061B8A0071E89C /* SearchResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +126,12 @@
 			children = (
 				11433FB724FF42A400324A62 /* MapViewController.h */,
 				11433FB824FF42A400324A62 /* MapViewController.m */,
+				11D1F7FE250603F40071E89C /* SearchViewController.h */,
+				11D1F7FF250603F40071E89C /* SearchViewController.m */,
 				1141938C2500F65E00F8CBBA /* AnnotationView.h */,
 				1141938D2500F65E00F8CBBA /* AnnotationView.m */,
+				11D1F80125061B8A0071E89C /* SearchResultCell.h */,
+				11D1F80225061B8A0071E89C /* SearchResultCell.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -275,6 +297,18 @@
 			knownRegions = (
 				en,
 				Base,
+				"en-GB",
+				"en-AU",
+				"en-IN",
+				"zh-Hans",
+				"zh-Hant",
+				"zh-HK",
+				ja,
+				es,
+				"es-419",
+				de,
+				fr,
+				ru,
 			);
 			mainGroup = 11AC440D24209D6500421DC3;
 			productRefGroup = 11AC441724209D6500421DC3 /* Products */;
@@ -321,11 +355,13 @@
 			files = (
 				11AC442F24209D6700421DC3 /* main.m in Sources */,
 				1141938E2500F65E00F8CBBA /* AnnotationView.m in Sources */,
+				11D1F800250603F40071E89C /* SearchViewController.m in Sources */,
 				11AC44582420AF0C00421DC3 /* JMLocationManager.m in Sources */,
 				11AC442124209D6500421DC3 /* ViewController.m in Sources */,
 				113FBCA024FDE677007C9FC2 /* CoreLocationController.m in Sources */,
 				11AC441B24209D6500421DC3 /* AppDelegate.m in Sources */,
 				11AC442724209D6500421DC3 /* JMMap.xcdatamodeld in Sources */,
+				11D1F80325061B8A0071E89C /* SearchResultCell.m in Sources */,
 				11433FB924FF42A400324A62 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +402,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				11AC442B24209D6700421DC3 /* Base */,
+				113F298525075E2B0083ED13 /* en-GB */,
+				113F298625075E2F0083ED13 /* en-AU */,
+				113F298725075E330083ED13 /* en-IN */,
+				113F298825075E380083ED13 /* zh-Hans */,
+				113F298925075E3C0083ED13 /* zh-Hant */,
+				113F298A25075E3F0083ED13 /* zh-HK */,
+				113F298B25075E440083ED13 /* ja */,
+				113F298C25075E480083ED13 /* es */,
+				113F298D25075E4D0083ED13 /* es-419 */,
+				113F298E25075E520083ED13 /* de */,
+				113F298F25075E570083ED13 /* fr */,
+				113F299025075E5D0083ED13 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -377,6 +425,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -435,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
