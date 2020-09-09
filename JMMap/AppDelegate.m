@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "CoreLocationController.h"
 #import "MapViewController.h"
+#import "CustomizeMapController.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +24,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    MapViewController *vc = [[MapViewController alloc] init];
+    CustomizeMapController *vc = [[CustomizeMapController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];

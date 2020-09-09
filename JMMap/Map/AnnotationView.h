@@ -11,8 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AnnotationView : MKAnnotationView<MKAnnotation>
-
-
+ 
 @end
 
 NS_ASSUME_NONNULL_END

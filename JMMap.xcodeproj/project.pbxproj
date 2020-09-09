@@ -10,6 +10,7 @@
 		113FBCA024FDE677007C9FC2 /* CoreLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 113FBC9F24FDE677007C9FC2 /* CoreLocationController.m */; };
 		1141938E2500F65E00F8CBBA /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1141938D2500F65E00F8CBBA /* AnnotationView.m */; };
 		11433FB924FF42A400324A62 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11433FB824FF42A400324A62 /* MapViewController.m */; };
+		114958BB25086B6100EB0264 /* CustomizeMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 114958BA25086B6100EB0264 /* CustomizeMapController.m */; };
 		11AC441B24209D6500421DC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC441A24209D6500421DC3 /* AppDelegate.m */; };
 		11AC442124209D6500421DC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC442024209D6500421DC3 /* ViewController.m */; };
 		11AC442724209D6500421DC3 /* JMMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11AC442524209D6500421DC3 /* JMMap.xcdatamodeld */; };
@@ -60,6 +61,8 @@
 		1141938D2500F65E00F8CBBA /* AnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
 		11433FB724FF42A400324A62 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		11433FB824FF42A400324A62 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		114958B925086B6100EB0264 /* CustomizeMapController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomizeMapController.h; sourceTree = "<group>"; };
+		114958BA25086B6100EB0264 /* CustomizeMapController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomizeMapController.m; sourceTree = "<group>"; };
 		11AC441624209D6500421DC3 /* JMMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11AC441924209D6500421DC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11AC441A24209D6500421DC3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -126,10 +129,12 @@
 			children = (
 				11433FB724FF42A400324A62 /* MapViewController.h */,
 				11433FB824FF42A400324A62 /* MapViewController.m */,
-				11D1F7FE250603F40071E89C /* SearchViewController.h */,
-				11D1F7FF250603F40071E89C /* SearchViewController.m */,
+				114958B925086B6100EB0264 /* CustomizeMapController.h */,
+				114958BA25086B6100EB0264 /* CustomizeMapController.m */,
 				1141938C2500F65E00F8CBBA /* AnnotationView.h */,
 				1141938D2500F65E00F8CBBA /* AnnotationView.m */,
+				11D1F7FE250603F40071E89C /* SearchViewController.h */,
+				11D1F7FF250603F40071E89C /* SearchViewController.m */,
 				11D1F80125061B8A0071E89C /* SearchResultCell.h */,
 				11D1F80225061B8A0071E89C /* SearchResultCell.m */,
 			);
@@ -358,6 +363,7 @@
 				11D1F800250603F40071E89C /* SearchViewController.m in Sources */,
 				11AC44582420AF0C00421DC3 /* JMLocationManager.m in Sources */,
 				11AC442124209D6500421DC3 /* ViewController.m in Sources */,
+				114958BB25086B6100EB0264 /* CustomizeMapController.m in Sources */,
 				113FBCA024FDE677007C9FC2 /* CoreLocationController.m in Sources */,
 				11AC441B24209D6500421DC3 /* AppDelegate.m in Sources */,
 				11AC442724209D6500421DC3 /* JMMap.xcdatamodeld in Sources */,
