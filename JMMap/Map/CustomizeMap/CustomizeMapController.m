@@ -65,10 +65,10 @@
     /* Configuring the Map's Appearance */
     //    _mapView.camera
     //    _mapView.pointOfInterestFilter = [[MKPointOfInterestFilter alloc] initExcludingCategories:@[MKPointOfInterestCategoryAirport,MKPointOfInterestCategoryAmusementPark,MKPointOfInterestCategoryAquarium,MKPointOfInterestCategoryATM,MKPointOfInterestCategoryBakery,MKPointOfInterestCategoryBank,MKPointOfInterestCategoryBeach]];
-    _mapView.showsBuildings = YES;
-    _mapView.showsCompass = YES;
-    _mapView.showsScale = YES;
-    _mapView.showsTraffic = YES;
+//    _mapView.showsBuildings = YES;
+//    _mapView.showsCompass = YES;
+//    _mapView.showsScale = YES;
+//    _mapView.showsTraffic = YES;
     
     
     /* Displaying the User's Location */
@@ -95,6 +95,32 @@
     
     /* Creating Annotation Views */
     [_mapView registerClass:[AnnotationView class] forAnnotationViewWithReuseIdentifier:@"annotation"];
+    
+    
+#pragma mark -- Map Customization
+    
+    MKMapCamera *mapCamera = [MKMapCamera camera];
+//    MKMapCamera cameraLookingAtCenterCoordinate:<#(CLLocationCoordinate2D)#> fromDistance:<#(CLLocationDistance)#> pitch:<#(CGFloat)#> heading:<#(CLLocationDirection)#>
+//    MKMapCamera cameraLookingAtCenterCoordinate:<#(CLLocationCoordinate2D)#> fromEyeCoordinate:<#(CLLocationCoordinate2D)#> eyeAltitude:<#(CLLocationDistance)#>
+    _mapView.camera = mapCamera;
+    
+    //罗盘按钮
+    MKCompassButton *compassButton = [MKCompassButton compassButtonWithMapView:_mapView];
+    compassButton.compassVisibility = MKFeatureVisibilityVisible;
+    compassButton.frame = CGRectMake(20, 20, 20, 20);
+    [_mapView addSubview:compassButton];
+    
+    //缩放视图
+    MKScaleView *scaleView = [MKScaleView scaleViewWithMapView:_mapView];
+    scaleView.scaleVisibility = MKFeatureVisibilityVisible;
+    [_mapView addSubview:scaleView];
+    
+    //追踪按钮
+//    MKUserTrackingButton *trackingButton = [MKUserTrackingButton userTrackingButtonWithMapView:_mapView];
+//    [_mapView addSubview:trackingButton];
+    
+    MKUserTrackingBarButtonItem *barItem = [[MKUserTrackingBarButtonItem alloc] initWithMapView:_mapView];
+    self.navigationItem.rightBarButtonItem = barItem;
     
     
 }

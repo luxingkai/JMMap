@@ -10,6 +10,11 @@
 		113FBCA024FDE677007C9FC2 /* CoreLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 113FBC9F24FDE677007C9FC2 /* CoreLocationController.m */; };
 		1141938E2500F65E00F8CBBA /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1141938D2500F65E00F8CBBA /* AnnotationView.m */; };
 		11433FB924FF42A400324A62 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11433FB824FF42A400324A62 /* MapViewController.m */; };
+		1144A04A2509CE9000936775 /* AnnotationsOverlaysControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1144A0492509CE9000936775 /* AnnotationsOverlaysControllers.m */; };
+		1144A04D250A05AC00936775 /* JMAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1144A04C250A05AC00936775 /* JMAnnotation.m */; };
+		1144A052250A29C100936775 /* JMOverlayRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1144A051250A29C100936775 /* JMOverlayRenderer.m */; };
+		1144A055250A2AA200936775 /* JMOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 1144A054250A2AA200936775 /* JMOverlay.m */; };
+		1144A059250A329A00936775 /* GeographicalFeaturesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1144A058250A329A00936775 /* GeographicalFeaturesController.m */; };
 		114958BB25086B6100EB0264 /* CustomizeMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 114958BA25086B6100EB0264 /* CustomizeMapController.m */; };
 		11AC441B24209D6500421DC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC441A24209D6500421DC3 /* AppDelegate.m */; };
 		11AC442124209D6500421DC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC442024209D6500421DC3 /* ViewController.m */; };
@@ -61,6 +66,16 @@
 		1141938D2500F65E00F8CBBA /* AnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
 		11433FB724FF42A400324A62 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		11433FB824FF42A400324A62 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		1144A0482509CE9000936775 /* AnnotationsOverlaysControllers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnnotationsOverlaysControllers.h; sourceTree = "<group>"; };
+		1144A0492509CE9000936775 /* AnnotationsOverlaysControllers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnnotationsOverlaysControllers.m; sourceTree = "<group>"; };
+		1144A04B250A05AC00936775 /* JMAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMAnnotation.h; sourceTree = "<group>"; };
+		1144A04C250A05AC00936775 /* JMAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMAnnotation.m; sourceTree = "<group>"; };
+		1144A050250A29C100936775 /* JMOverlayRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMOverlayRenderer.h; sourceTree = "<group>"; };
+		1144A051250A29C100936775 /* JMOverlayRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMOverlayRenderer.m; sourceTree = "<group>"; };
+		1144A053250A2AA200936775 /* JMOverlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMOverlay.h; sourceTree = "<group>"; };
+		1144A054250A2AA200936775 /* JMOverlay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMOverlay.m; sourceTree = "<group>"; };
+		1144A057250A329A00936775 /* GeographicalFeaturesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeographicalFeaturesController.h; sourceTree = "<group>"; };
+		1144A058250A329A00936775 /* GeographicalFeaturesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeographicalFeaturesController.m; sourceTree = "<group>"; };
 		114958B925086B6100EB0264 /* CustomizeMapController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomizeMapController.h; sourceTree = "<group>"; };
 		114958BA25086B6100EB0264 /* CustomizeMapController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomizeMapController.m; sourceTree = "<group>"; };
 		11AC441624209D6500421DC3 /* JMMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,18 +142,76 @@
 		11433FB624FF3F1300324A62 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				1144A05C250A3A9500936775 /* Points of Interest */,
+				1144A05B250A3A9000936775 /* Local Search */,
+				1144A05A250A3A8E00936775 /* Directions */,
+				1144A04E250A283300936775 /* CustomizeMap */,
+				1144A04F250A284500936775 /* AnnotationOverlays */,
+				1144A056250A325300936775 /* GeographicalFeatures */,
 				11433FB724FF42A400324A62 /* MapViewController.h */,
 				11433FB824FF42A400324A62 /* MapViewController.m */,
-				114958B925086B6100EB0264 /* CustomizeMapController.h */,
-				114958BA25086B6100EB0264 /* CustomizeMapController.m */,
-				1141938C2500F65E00F8CBBA /* AnnotationView.h */,
-				1141938D2500F65E00F8CBBA /* AnnotationView.m */,
 				11D1F7FE250603F40071E89C /* SearchViewController.h */,
 				11D1F7FF250603F40071E89C /* SearchViewController.m */,
 				11D1F80125061B8A0071E89C /* SearchResultCell.h */,
 				11D1F80225061B8A0071E89C /* SearchResultCell.m */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		1144A04E250A283300936775 /* CustomizeMap */ = {
+			isa = PBXGroup;
+			children = (
+				114958B925086B6100EB0264 /* CustomizeMapController.h */,
+				114958BA25086B6100EB0264 /* CustomizeMapController.m */,
+			);
+			path = CustomizeMap;
+			sourceTree = "<group>";
+		};
+		1144A04F250A284500936775 /* AnnotationOverlays */ = {
+			isa = PBXGroup;
+			children = (
+				1144A0482509CE9000936775 /* AnnotationsOverlaysControllers.h */,
+				1144A0492509CE9000936775 /* AnnotationsOverlaysControllers.m */,
+				1141938C2500F65E00F8CBBA /* AnnotationView.h */,
+				1141938D2500F65E00F8CBBA /* AnnotationView.m */,
+				1144A04B250A05AC00936775 /* JMAnnotation.h */,
+				1144A04C250A05AC00936775 /* JMAnnotation.m */,
+				1144A050250A29C100936775 /* JMOverlayRenderer.h */,
+				1144A051250A29C100936775 /* JMOverlayRenderer.m */,
+				1144A053250A2AA200936775 /* JMOverlay.h */,
+				1144A054250A2AA200936775 /* JMOverlay.m */,
+			);
+			path = AnnotationOverlays;
+			sourceTree = "<group>";
+		};
+		1144A056250A325300936775 /* GeographicalFeatures */ = {
+			isa = PBXGroup;
+			children = (
+				1144A057250A329A00936775 /* GeographicalFeaturesController.h */,
+				1144A058250A329A00936775 /* GeographicalFeaturesController.m */,
+			);
+			path = GeographicalFeatures;
+			sourceTree = "<group>";
+		};
+		1144A05A250A3A8E00936775 /* Directions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Directions;
+			sourceTree = "<group>";
+		};
+		1144A05B250A3A9000936775 /* Local Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Local Search";
+			sourceTree = "<group>";
+		};
+		1144A05C250A3A9500936775 /* Points of Interest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Points of Interest";
 			sourceTree = "<group>";
 		};
 		11AC440D24209D6500421DC3 = {
@@ -362,12 +435,17 @@
 				1141938E2500F65E00F8CBBA /* AnnotationView.m in Sources */,
 				11D1F800250603F40071E89C /* SearchViewController.m in Sources */,
 				11AC44582420AF0C00421DC3 /* JMLocationManager.m in Sources */,
+				1144A052250A29C100936775 /* JMOverlayRenderer.m in Sources */,
 				11AC442124209D6500421DC3 /* ViewController.m in Sources */,
 				114958BB25086B6100EB0264 /* CustomizeMapController.m in Sources */,
 				113FBCA024FDE677007C9FC2 /* CoreLocationController.m in Sources */,
+				1144A059250A329A00936775 /* GeographicalFeaturesController.m in Sources */,
 				11AC441B24209D6500421DC3 /* AppDelegate.m in Sources */,
+				1144A04D250A05AC00936775 /* JMAnnotation.m in Sources */,
 				11AC442724209D6500421DC3 /* JMMap.xcdatamodeld in Sources */,
 				11D1F80325061B8A0071E89C /* SearchResultCell.m in Sources */,
+				1144A055250A2AA200936775 /* JMOverlay.m in Sources */,
+				1144A04A2509CE9000936775 /* AnnotationsOverlaysControllers.m in Sources */,
 				11433FB924FF42A400324A62 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +625,7 @@
 				DEVELOPMENT_TEAM = 962BW6QCNQ;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/JMMap/PrefixHeader.pch";
 				INFOPLIST_FILE = JMMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -565,6 +644,7 @@
 				DEVELOPMENT_TEAM = 962BW6QCNQ;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/JMMap/PrefixHeader.pch";
 				INFOPLIST_FILE = JMMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

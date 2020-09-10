@@ -11,6 +11,8 @@
 #import "CoreLocationController.h"
 #import "MapViewController.h"
 #import "CustomizeMapController.h"
+#import "AnnotationsOverlaysControllers.h"
+#import "GeographicalFeaturesController.h"
 
 @interface AppDelegate ()
 
@@ -24,7 +26,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    CustomizeMapController *vc = [[CustomizeMapController alloc] init];
+    GeographicalFeaturesController *vc = [[GeographicalFeaturesController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
