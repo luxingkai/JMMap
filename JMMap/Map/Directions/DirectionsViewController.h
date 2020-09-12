@@ -1,8 +1,8 @@
 //
-//  SearchResultCell.h
+//  DirectionsViewController.h
 //  JMMap
 //
-//  Created by tigerfly on 2020/9/7.
+//  Created by tigerfly on 2020/9/11.
 //  Copyright © 2020 tiger fly. All rights reserved.
 //
 
@@ -10,8 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SearchResultCell : UITableViewCell
-
+@interface DirectionsViewController : UIViewController
 
 @end
 

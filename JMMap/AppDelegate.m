@@ -13,6 +13,8 @@
 #import "CustomizeMapController.h"
 #import "AnnotationsOverlaysControllers.h"
 #import "GeographicalFeaturesController.h"
+#import "DirectionsViewController.h"
+#import "LocalSearchController.h"
 
 @interface AppDelegate ()
 
@@ -26,7 +28,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    GeographicalFeaturesController *vc = [[GeographicalFeaturesController alloc] init];
+    LocalSearchController *vc = [[LocalSearchController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
