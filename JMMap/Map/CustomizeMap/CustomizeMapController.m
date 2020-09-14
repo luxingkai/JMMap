@@ -173,7 +173,6 @@
 - (nullable MKAnnotationView *)mapView:(MKMapView *)mapView
                      viewForAnnotation:(id <MKAnnotation>)annotation {
     MKAnnotationView *annotationView = [_mapView dequeueReusableAnnotationViewWithIdentifier:@"annotation"];
-    [mapView addAnnotation:(id)annotationView];
     return annotationView;
 }
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {

@@ -70,7 +70,7 @@
      */
     
     /*
-     Create teh Location Manager and Delegate
+     Create the Location Manager and Delegate
      
      Create an instance of the CLLocationManager class and store a strong reference to
      it somewhere in your app. You must keep a strong reference to the Location Manager
@@ -87,7 +87,7 @@
     /*
      Handle Errors in the Delegate Methods
      
-     Implement the failure-related methods in the delgate to fail gracefully when
+     Implement the failure-related methods in the delegate to fail gracefully when
      location services are not available on a device. If you try to start an
      unavailable services, the CLLocationManager object calls one of the failure-
      related methods of its delegate. For example, if region monitoring is unavailable,

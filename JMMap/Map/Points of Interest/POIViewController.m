@@ -25,12 +25,16 @@
      a map view, local search, or local search completer.
      */
 
-    MKPointOfInterestFilter *filter = [[MKPointOfInterestFilter alloc] initExcludingCategories:@[MKPointOfInterestCategoryAirport,MKPointOfInterestCategoryAmusementPark,MKPointOfInterestCategoryAquarium,MKPointOfInterestCategoryATM,MKPointOfInterestCategoryBakery,MKPointOfInterestCategoryBank
+    MKPointOfInterestFilter *filter = [[MKPointOfInterestFilter alloc] initExcludingCategories:@[MKPointOfInterestCategoryAirport,      MKPointOfInterestCategoryAmusementPark,MKPointOfInterestCategoryAquarium,MKPointOfInterestCategoryATM,MKPointOfInterestCategoryBakery,MKPointOfInterestCategoryBank
     ]];
     
     //Creating Filters
 //    filter includesCategory:<#(nonnull MKPointOfInterestCategory)#>
 //    filter excludesCategory:<#(nonnull MKPointOfInterestCategory)#>
+    
+    //Querying Filter Behavior
+//    filter excludesCategory:<#(nonnull MKPointOfInterestCategory)#>
+//    filter includesCategory:<#(nonnull MKPointOfInterestCategory)#>
     
     
 }
